@@ -20,6 +20,7 @@ export interface Options {
 	useBase64URL: boolean;
 	useMathMLPolyfill: boolean;
 	renderChanges: boolean;
+	sanitiser: any;
 }
 
 export const defaultOptions: Options = {
@@ -39,7 +40,8 @@ export const defaultOptions: Options = {
 	renderEndnotes: true,
 	useBase64URL: false,
 	useMathMLPolyfill: false,
-	renderChanges: false
+	renderChanges: false,
+	sanitiser: false,
 }
 
 export function praseAsync(data: Blob | any, userOptions: Partial<Options> = null): Promise<any>  {

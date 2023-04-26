@@ -40,14 +40,6 @@ function buildConfig(prod) {
     },
     resolve: {
       extensions: ['.ts', '.js']
-    },
-    externals: {
-      "jszip": {
-        root: "JSZip",
-        commonjs: "jszip",
-        commonjs2: "jszip",
-        amd: "jszip"
-      },
     }
   }
 }

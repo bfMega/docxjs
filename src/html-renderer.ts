@@ -895,7 +895,12 @@ section.${c}>article { margin-bottom: auto; }
 	renderSymbol(elem: WmlSymbol) {
 		var span = this.createElement("span");
 		span.style.fontFamily = elem.font;
-		span.innerHTML = `&#x${elem.char};`
+		if (typeof this.options.sanitiser === 'function') {
+			span.appendChild(this.options.sanitiser(`&#x${elem.char};`));
+		}
+		else {
+			span.innerHTML = `&#x${elem.char};`;
+		}
 		return span;
 	}
 
